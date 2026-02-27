@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { motion } from "motion/react"
-import { Heart } from "lucide-react"
 
 export default function MagicMessages({ onNext }) {
 
