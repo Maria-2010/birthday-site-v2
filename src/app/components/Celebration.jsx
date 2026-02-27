@@ -16,11 +16,12 @@ export default function Celebration({ onNext, onMusicStart }) {
 
             for (let i = 0; i < 2; i++) {
                 confetti({
-  particleCount: 300,
-  spread: 120,
-  origin: { y: 0.6 },
-  colors: ['#ff4da6', '#ffd700', '#c084fc', '#ffffff']
-})
+                    particleCount: 1,
+                    angle: i === 0 ? 60 : 120,
+                    spread: 55,
+                    origin: { x: i === 0 ? 0 : 1 },
+                    colors: [randomColor()],
+                })
             }
 
             if (Date.now() < end) {
