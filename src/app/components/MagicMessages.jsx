@@ -7,32 +7,27 @@ import { Heart } from "lucide-react"
 export default function MagicMessages({ onNext }) {
 
   const cards = [
-    {
-      header: "With Love",
-      message:
-        "You are the heart of our home and the person who makes everything better just by being there. Your love and warmth light up my life every single day."
-    },
-    {
-      header: "My Superhero",
-      message:
-        "Thank you for always believing in me, even when I didn't believe in myself. Your strength and kindness are what I admire most in the world."
-    },
-    {
-      header: "Dream Big",
-      message:
-        "May this year bring you as much happiness as you give to everyone else. I hope all your heart’s desires come true, because you deserve the absolute best."
-    },
-    {
-      header: "New Adventures",
-      message:
-        "You're absolutely wonderful and deserve to travel, laugh, and explore all the beautiful things this world has to offer. I can’t wait for our next adventure together!"
-    },
-    {
-      header: "You're Amazing",
-      message:
-        "You are truly one of a kind, Mummy. You deserve all the happiness in the world today and every day. I love you more than words can say!"
-    }
-  ]
+  {
+    header: "Like a Mother",
+    message:
+      "Happy Birthday, Ma’am! You don’t just teach us; you care for us like a mother. Having you in school makes me feel safe and happy every single day."
+  },
+  {
+    header: "My Kind Guide",
+    message:
+      "Thank you for always being on my side. No matter what the problem is, you always listen and support me. Just knowing you are in my corner gives me so much strength."
+  },
+  {
+    header: "My Inspiration",
+    message:
+      "You are the reason I love History now! I used to actually hate it, but the way you teach changed everything for me. Thank you for being such an amazing inspiration."
+  },
+  {
+    header: "Stay Happy",
+    message:
+      "My biggest wish for you is that you should always be happy. You deserve all the smiles and joy in the world."
+  }
+]
 
   const [opened, setOpened] = useState(false)
   const [index, setIndex] = useState(0)
@@ -59,7 +54,6 @@ export default function MagicMessages({ onNext }) {
   }
 
   return (
-    <div className="sticky top-0 bg-black/40 backdrop-blur-md py-6 z-20">
   <div className="min-h-screen flex flex-col items-center justify-center p-6 
   bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
