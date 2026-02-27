@@ -11,18 +11,22 @@ export default function Letter() {
     const [currentText, setCurrentText] = useState("")
     const [showCursor, setShowCursor] = useState(true)
 
-    const letterText = `My Dearest Madam Jii,
+    const letterText = `My Dearest Mummy ❤️,
 
-On this very special day, I want you to know how incredibly grateful I am to have you in my life. Your birthday isn't just a celebration of another year - it's a celebration of all the joy, laughter, and beautiful memories you bring to this world.
+  Happy Birthday to the person who is the heart and soul of our home! 🏠✨
 
-You have this amazing ability to light up any room you enter, to make people smile even on their darkest days, and to spread kindness wherever you go. Your heart is pure gold, and your spirit is absolutely infectious.
+  As I grow older, I realize more and more how much you have done for me. I see the sacrifices you’ve made, the way you’ve always put my happiness before your own, and the silent strength you show every single day. 💪👩‍👧‍👦
 
-Thank you for being the wonderful, amazing, absolutely fantastic person that you are. The world is so much brighter because you're in it.
+  You were my very first friend and my first teacher. 📚🌹 You are the person I run to when I’m happy, and the only person I want to talk to when I’m sad. Your hug is the safest place in the world, and your smile is all the light I need. 🫂🌟
 
-Happy Birthday, beautiful soul! 🎂✨
+  Thank you for teaching me how to be kind, how to be strong, and how to love. Thank you for every meal you’ve cooked, every prayer you’ve said for me, and every time you stayed up late just to make sure I was okay. 🍲🙏🌙
 
-With all my love and warmest wishes,
-Forever Yours 💕`
+  Mummy, if I can become even half the person you are, I will consider myself very lucky. My only wish for you today is that you feel even a little bit of the immense love and joy you give to everyone else. 🎈🎂🎁
+
+  I love you more than words could ever say. Always. 💖♾️
+
+Your loving child, 
+C.S Claina Sherin Maria 🌸
 
     useEffect(() => {
         if (showText) {
@@ -79,7 +83,7 @@ Forever Yours 💕`
                     <h1 className="text-4xl md:text-6xl py-1 md:py-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 mb-4">
                         A Special Letter
                     </h1>
-                    <p className="text-lg text-purple-300">Just for you, on your special day 💌</p>
+                    <p className="text-lg text-purple-300">Just for you Mummy, on your special day 💌</p>
                 </motion.div>
 
                 <motion.div
