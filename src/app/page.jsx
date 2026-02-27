@@ -77,13 +77,10 @@ const stopMusic = () => {
     return (
   <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
-    {/* Floating Hearts */}
+    {/* Floating Hearts (background for all pages) */}
     <FloatingHearts />
-</div>
 
-    {/* Background */}
-
-    {/* Radial Effects */}
+    {/* Radial Background Effects */}
     <div className="fixed inset-0 z-0 blur-[120px] opacity-20"
       style={{
         backgroundImage:
@@ -109,14 +106,14 @@ const stopMusic = () => {
     <audio ref={audioRef} src="/music.mp3" loop />
 
     {/* Screens */}
-      <div className="relative z-10 pt-36 md:pt-32">
+    <div className="relative z-10 pt-36 md:pt-32">
       <AnimatePresence mode="wait">
-  {isLoading ? (
-    <Loader key="loader" />
-  ) : (
-    screens[currentScreen]
-  )}
-</AnimatePresence>
+        {isLoading ? (
+          <Loader key="loader" />
+        ) : (
+          screens[currentScreen]
+        )}
+      </AnimatePresence>
     </div>
 
     {/* Watermark */}
