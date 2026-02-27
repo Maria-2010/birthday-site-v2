@@ -152,9 +152,14 @@ useEffect(() => {
                                 exit={{ opacity: 0, scale: 0.2 }}
                                 transition={{ duration: 0.8, type: "spring" }}
                                 style={{
-                                    background:
-                                        "linear-gradient(135deg, #fce7f3 0%, #fae8ff 25%, #e0e7ff 50%, #fdf2f8 75%, #fce7f3 100%)",
-                                }}
+    backgroundColor: "#fffaf5",
+    backgroundImage: `
+      radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)
+    `,
+    backgroundSize: "20px 20px, 40px 40px",
+    boxShadow: "0 10px 40px rgba(0,0,0,0.15)"
+}}
                             >
                                 <div className="text-center mb-6">
                                     <motion.div
