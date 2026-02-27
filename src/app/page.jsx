@@ -6,6 +6,7 @@ import Loader from "./components/Loader"
 import Countdown from "./components/Countdown"
 import Celebration from "./components/Celebration"
 import HappyBirthday from "./components/HappyBirthday"
+import MagicMessages from "./components/MagicMessages"
 import PhotoGallery from "./components/PhotoGallery"
 import Letter from "./components/Letter"
 import { motion } from "motion/react"
@@ -25,13 +26,37 @@ export default function BirthdayApp() {
   }, [])
 
   const screens = [
-    !isBirthdayOver
-      ? <Countdown key="countdown" onComplete={() => setisBirthdayOver(true)} birthdayDate={birthdayDate} />
-      : <Celebration key="celebration" onNext={() => setCurrentScreen(1)} onMusicStart={() => setMusicStarted(true)} />,
-    <HappyBirthday key="happy" onNext={() => setCurrentScreen(2)} />,
-    <PhotoGallery key="gallery" onNext={() => setCurrentScreen(3)} />,
-    <Letter key="letter" />,
-  ]
+  !isBirthdayOver
+    ? <Countdown 
+        key="countdown" 
+        onComplete={() => setisBirthdayOver(true)} 
+        birthdayDate={birthdayDate} 
+      />
+    : <Celebration 
+        key="celebration" 
+        onNext={() => setCurrentScreen(1)} 
+        onMusicStart={() => setMusicStarted(true)} 
+      />,
+
+  <HappyBirthday 
+    key="happy" 
+    onNext={() => setCurrentScreen(2)} 
+  />,
+
+  <MagicMessages 
+    key="magic" 
+    onNext={() => setCurrentScreen(3)} 
+  />,
+
+  <PhotoGallery 
+    key="gallery" 
+    onNext={() => setCurrentScreen(4)} 
+  />,
+
+  <Letter 
+    key="letter" 
+  />,
+]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30 overflow-hidden relative">
