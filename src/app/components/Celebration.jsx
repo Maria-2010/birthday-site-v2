@@ -5,7 +5,7 @@ import { Gift, Sparkles, Heart } from "lucide-react"
 import confetti from "canvas-confetti"
 import { useEffect } from "react"
 
-export default function Celebration({ onNext }) {
+export default function Celebration({ onNext, onMusicStart }) {
     const colors = ["#ff69b4", "#ff1493", "#9370db"]
     useEffect(() => {
         const duration = 2500
