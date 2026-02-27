@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useRef } from "react"
 import { AnimatePresence } from "motion/react"
-import Loader from "./components/Loader"
-import Countdown from "./components/Countdown"
-import Celebration from "./components/Celebration"
-import HappyBirthday from "./components/HappyBirthday"
-import MagicMessages from "./components/MagicMessages"
-import PhotoGallery from "./components/PhotoGallery"
-import Letter from "./components/Letter"
+import Loader from "../components/Loader"
+import Countdown from "../components/Countdown"
+import Celebration from "../components/Celebration"
+import HappyBirthday from "../components/HappyBirthday"
+import MagicMessages from "../components/MagicMessages"
+import PhotoGallery from "../components/PhotoGallery"
+import Letter from "../components/Letter"
 import { motion } from "motion/react"
 
 export default function BirthdayApp() {
@@ -23,9 +23,7 @@ export default function BirthdayApp() {
   )
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 4000)
+    const timer = setTimeout(() => setIsLoading(false), 4000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -66,36 +64,17 @@ export default function BirthdayApp() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
-      {/* Radial Background Effects */}
-      <div
-        className="fixed inset-0 z-0 blur-[120px] opacity-20"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 25%, rgba(255, 99, 165, 0.6), transparent 40%)",
-        }}
-      />
-      <div
-        className="fixed inset-0 z-0 blur-[120px] opacity-20"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.6), transparent 40%)",
-        }}
-      />
-      <div
-        className="fixed inset-0 z-0 blur-[160px] opacity-10"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 50% 50%, rgba(228, 193, 255, 0.4), transparent 40%)",
-        }}
-      />
-
       {/* Music */}
       <audio ref={audioRef} src="/music.mp3" loop />
 
       {/* Screens */}
       <div className="relative z-10 pt-36 md:pt-32">
         <AnimatePresence mode="wait">
-          {isLoading ? <Loader key="loader" /> : screens[currentScreen]}
+          {isLoading ? (
+            <Loader key="loader" />
+          ) : (
+            screens[currentScreen]
+          )}
         </AnimatePresence>
       </div>
 
