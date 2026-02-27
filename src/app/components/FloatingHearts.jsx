@@ -3,11 +3,10 @@
 import { motion } from "motion/react"
 
 export default function FloatingHearts() {
-
-  const hearts = Array.from({ length: 30 })
+  const hearts = Array.from({ length: 25 })
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
       {hearts.map((_, i) => {
 
         const left = Math.random() * 100
@@ -21,17 +20,19 @@ export default function FloatingHearts() {
             style={{
               left: `${left}vw`,
               fontSize: `${size}px`,
+              position: "absolute",
             }}
-            className="absolute text-white/20"
-            initial={{ y: "100vh", opacity: 0 }}
-            animate={{ y: "-10vh", opacity: [0, 1, 0] }}
+            className="text-white/30"
+            initial={{ y: 120 }}    // start just below screen
+            animate={{ y: -10 }}    // end just above screen
             transition={{
               duration,
               repeat: Infinity,
               delay,
+              ease: "linear",
             }}
           >
-            🤍
+            ❤️
           </motion.div>
         )
       })}
