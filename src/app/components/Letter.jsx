@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "motion/react"
 import { Mail, Heart, Sparkles, RotateCcw } from "lucide-react"
 import confetti from "canvas-confetti"
 
-export default function Letter() {
+import { useEffect } from "react"
+
+export default function Letter({ stopMusic }) {
     const [isOpen, setIsOpen] = useState(false)
     const [showText, setShowText] = useState(false)
     const [currentText, setCurrentText] = useState("")
