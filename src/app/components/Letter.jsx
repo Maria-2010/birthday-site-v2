@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { Mail, Heart, Sparkles, RotateCcw } from "lucide-react"
 import confetti from "canvas-confetti"
@@ -12,6 +12,7 @@ export default function Letter({ stopMusic }) {
     const [showText, setShowText] = useState(false)
     const [currentText, setCurrentText] = useState("")
     const [showCursor, setShowCursor] = useState(true)
+    const containerRef = useRef(null)
 
     const letterText = `My Dearest Mummy ❤️,
 
@@ -53,6 +54,13 @@ C.S Claina Sherin Maria 🌸`
             return () => clearInterval(timer)
         }
     }, [showText, letterText])
+    
+    useEffect(() => {
+    if (containerRef.current) {
+        containerRef.current.scrollTop =
+            containerRef.current.scrollHeight
+    }
+}, [currentText])
 
     const handleOpenLetter = () => {
         setIsOpen(true)
@@ -155,7 +163,10 @@ C.S Claina Sherin Maria 🌸`
                                     </motion.div>
                                 </div>
 
-                                <div className="min-h-72 max-h-72 overflow-y-auto text-gray-700 leading-relaxed">
+                                  <div
+    ref={containerRef}
+    className="min-h-72 max-h-72 overflow-y-auto text-gray-700 leading-relaxed"
+>
                                     {showText && (
                                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-3 mr-2 ">
                                             <div className="whitespace-pre-wrap font-cute">
