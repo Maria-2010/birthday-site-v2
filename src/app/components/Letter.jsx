@@ -26,7 +26,7 @@ export default function Letter() {
   I love you more than words could ever say. Always. 💖♾️
 
 Your loving child, 
-C.S Claina Sherin Maria 🌸'
+C.S Claina Sherin Maria 🌸`
 
     useEffect(() => {
         if (showText) {
