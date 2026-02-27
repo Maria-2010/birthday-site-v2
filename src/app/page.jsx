@@ -66,7 +66,8 @@ export default function BirthdayApp() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
-      {/* Background effects */}
+
+      {/* Radial Background Effects */}
       <div
         className="fixed inset-0 z-0 blur-[120px] opacity-20"
         style={{
@@ -89,13 +90,13 @@ export default function BirthdayApp() {
         }}
       />
 
-      {/* Floating hearts */}
+      {/* Floating Hearts */}
       <FloatingHearts />
 
       {/* Music */}
       <audio ref={audioRef} src="/music.mp3" loop />
 
-      {/* Screen */}
+      {/* Screens */}
       <div className="relative z-10 pt-36 md:pt-32">
         <AnimatePresence mode="wait">
           {isLoading ? <Loader key="loader" /> : screens[currentScreen]}
