@@ -59,6 +59,7 @@ export default function MagicMessages({ onNext }) {
   }
 
   return (
+    <div className="sticky top-0 bg-black/40 backdrop-blur-md py-6 z-20">
   <div className="min-h-screen flex flex-col items-center justify-center p-6 
   bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
