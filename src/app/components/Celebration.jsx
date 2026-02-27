@@ -75,7 +75,7 @@ export default function Celebration({ onNext }) {
                         filter: "drop-shadow(0 0 30px rgba(255,105,180,0.5))",
                     }}
                 >
-                    Time to Celebrate!
+                    🎊Time to Celebrate!🎊
                 </motion.h1>
 
                 <motion.p
