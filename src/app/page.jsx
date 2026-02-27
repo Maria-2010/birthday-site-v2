@@ -11,7 +11,6 @@ import PhotoGallery from "./components/PhotoGallery"
 import Letter from "./components/Letter"
 import { motion } from "motion/react"
 import FloatingHearts from "./components/FloatingHearts"
-import PageHeader from "./components/PageHeader"
 
 export default function BirthdayApp() {
   const [currentScreen, setCurrentScreen] = useState(0)
@@ -80,9 +79,6 @@ const stopMusic = () => {
 
     {/* Floating Hearts */}
     <FloatingHearts />
-    {/* Header */}
-<div className="fixed top-6 left-0 w-full z-30 pointer-events-none px-4">
-  <PageHeader />
 </div>
 
     {/* Background */}
