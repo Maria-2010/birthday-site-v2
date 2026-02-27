@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { AnimatePresence } from "motion/react"
 import Loader from "./components/Loader"
 import Countdown from "./components/Countdown"
@@ -14,6 +14,9 @@ import { motion } from "motion/react"
 export default function BirthdayApp() {
   const [currentScreen, setCurrentScreen] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
+  
+  const audioRef = useRef(null)
+const [musicStarted, setMusicStarted] = useState(false)
 
   const birthdayDate = new Date("2026-01-02T00:00:00")
   const [isBirthdayOver, setisBirthdayOver] = useState(new Date().getTime() >= birthdayDate.getTime())
@@ -24,6 +27,13 @@ export default function BirthdayApp() {
     }, 4000)
     return () => clearTimeout(timer)
   }, [])
+  
+  useEffect(() => {
+  if (musicStarted && audioRef.current) {
+    audioRef.current.volume = 0.5
+    audioRef.current.play()
+  }
+}, [musicStarted])
 
   const screens = [
   !isBirthdayOver
@@ -60,7 +70,7 @@ export default function BirthdayApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30 overflow-hidden relative">
-
+      <audio ref={audioRef} src="/music.mp3" loop />
       {/* Radial gradients for background */}
       <div className="fixed inset-0 z-0 blur-[120px] opacity-20" style={{
         backgroundImage: "radial-gradient(circle at 20% 25%, rgba(255, 99, 165, 0.6), transparent 40%)",
