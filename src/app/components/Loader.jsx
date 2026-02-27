@@ -35,7 +35,7 @@ export default function Loader() {
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                    For someone very special...
+                    😍For someone very special...
                 </motion.p>
             </div>
         </motion.div>
