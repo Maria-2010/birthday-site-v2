@@ -1,6 +1,7 @@
 "use client"
-import { motion, AnimatePresence } from "motion/react"
+
 import { useState } from "react"
+import { motion } from "motion/react"
 
 export default function MagicMessages({ onNext }) {
 
@@ -32,46 +33,59 @@ export default function MagicMessages({ onNext }) {
     }
   ]
 
+  const [opened, setOpened] = useState(false)
   const [index, setIndex] = useState(0)
 
-  const nextCard = () => {
-    if (index + 1 === cards.length) {
-      onNext()
+  const handleClick = () => {
+    if (!opened) {
+      setOpened(true)
     } else {
-      setIndex(index + 1)
+      if (index + 1 < cards.length) {
+        setIndex(index + 1)
+      } else {
+        onNext()
+      }
     }
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-6 bg-gradient-to-br from-purple-900 via-pink-700 to-rose-500">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-pink-700 to-rose-500">
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          onClick={nextCard}
-          className="cursor-pointer max-w-xl w-full 
-            bg-white/10 backdrop-blur-xl 
-            p-8 rounded-3xl shadow-2xl 
-            border border-pink-300/40 text-center"
-        >
-          <h2 className="text-3xl font-bold text-yellow-300 mb-4">
-            {cards[index].header}
-          </h2>
+      <div onClick={handleClick} className="cursor-pointer text-center px-6">
 
-          <p className="text-lg text-white leading-relaxed">
-            {cards[index].message}
-          </p>
+        {!opened ? (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            className="text-8xl"
+          >
+            💌
+            <p className="text-white mt-4 text-lg">
+              Tap to see the magic ✨
+            </p>
+          </motion.div>
+        ) : (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl text-white max-w-md mx-auto shadow-2xl"
+          >
+            <h2 className="text-2xl font-bold text-yellow-300 mb-4">
+              {cards[index].header}
+            </h2>
 
-          <p className="mt-6 text-sm text-white/60">
-            Tap to continue 💕
-          </p>
-        </motion.div>
-      </AnimatePresence>
+            <p className="text-lg leading-relaxed">
+              {cards[index].message}
+            </p>
 
+            <p className="mt-4 text-sm opacity-60">
+              Tap for next 💕
+            </p>
+          </motion.div>
+        )}
+
+      </div>
     </div>
   )
 }
