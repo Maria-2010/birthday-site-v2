@@ -35,6 +35,13 @@ const [musicStarted, setMusicStarted] = useState(false)
   }
 }, [musicStarted])
 
+const stopMusic = () => {
+  if (audioRef.current) {
+    audioRef.current.pause()
+    audioRef.current.currentTime = 0
+  }
+}
+
   const screens = [
   !isBirthdayOver
     ? <Countdown 
@@ -63,9 +70,7 @@ const [musicStarted, setMusicStarted] = useState(false)
     onNext={() => setCurrentScreen(4)} 
   />,
 
-  <Letter 
-    key="letter" 
-  />,
+  <Letter key="letter" stopMusic={stopMusic} />,
 ]
 
   return (
