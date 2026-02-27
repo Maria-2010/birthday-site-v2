@@ -17,7 +17,7 @@ export default function BirthdayApp() {
   const audioRef = useRef(null)
   const [musicStarted, setMusicStarted] = useState(false)
 
-  const birthdayDate = new Date("2026-01-02T00:00:00")
+  const birthdayDate = new Date("2026-02-28T00:00:00")
   const [isBirthdayOver, setisBirthdayOver] = useState(
     new Date().getTime() >= birthdayDate.getTime()
   )
