@@ -11,22 +11,24 @@ export default function Letter() {
     const [currentText, setCurrentText] = useState("")
     const [showCursor, setShowCursor] = useState(true)
 
-    const letterText = `My Dearest Mummy ❤️,
+    const letterText = `Dear Heena Ma’am✨,
+    
+I really wanted to tell you how much I love everything you do for me. I don’t always say it, but you’re honestly the best teacher I’ve ever had! 💖
 
-  Happy Birthday to the person who is the heart and soul of our home! 🏠✨
+To be honest, I used to really hate History before I met you. 🙈 It was so boring! But the way you teach is so cool that now History is actually my favorite subject. 📚✨ I never thought that would happen, but it’s all because of you.
 
-  As I grow older, I realize more and more how much you have done for me. I see the sacrifices you’ve made, the way you’ve always put my happiness before your own, and the silent strength you show every single day. 💪👩‍👧‍👦
+Thank you so much for being there for me, especially when I was sick. 🤒 It meant a lot to me because you not just cared about my studies but also my health. It feels like having a mother at school who always cares out for me. ❤️
 
-  You were my very first friend and my first teacher. 📚🌹 You are the person I run to when I’m happy, and the only person I want to talk to when I’m sad. Your hug is the safest place in the world, and your smile is all the light I need. 🫂🌟
+Please, Ma'am, always take good care of your health too. 🌸 You do so much for all of us, so please remember to look after yourself just like you looked after me. 💖
 
-  Thank you for teaching me how to be kind, how to be strong, and how to love. Thank you for every meal you’ve cooked, every prayer you’ve said for me, and every time you stayed up late just to make sure I was okay. 🍲🙏🌙
+Whenever I have a problem, you always listen and stay on my side. Just knowing you’re there for me makes me feel so much better. 🌍✨ You’re my biggest inspiration and a really kind guide.
 
-  Mummy, if I can become even half the person you are, I will consider myself very lucky. My only wish for you today is that you feel even a little bit of the immense love and joy you give to everyone else. 🎈🎂🎁
+I hope your birthday is awesome with lots of joy and fun! 🎂🎁 Please always stay happy, because when you’re happy, I’m happy too! 😊
 
-  I love you more than words could ever say. Always. 💖♾️
+Happy Birthday, Ma'am! You're the best! 🎈🎉
 
-Your loving child, 
-C.S Claina Sherin Maria 🌸`
+Your dear student,
+C.S Claina Sherin Maria 🥰`
 
     useEffect(() => {
         if (showText) {
@@ -83,7 +85,7 @@ C.S Claina Sherin Maria 🌸`
                     <h1 className="text-4xl md:text-6xl py-1 md:py-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 mb-4">
                         A Special Letter
                     </h1>
-                    <p className="text-lg text-purple-300">Just for you Mummy, on your special day 💌</p>
+                    <p className="text-lg text-purple-300">Just for you Ma'am, on your special day 💌</p>
                 </motion.div>
 
                 <motion.div
