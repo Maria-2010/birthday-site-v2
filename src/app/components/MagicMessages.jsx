@@ -35,6 +35,15 @@ export default function MagicMessages({ onNext }) {
 
   const [opened, setOpened] = useState(false)
   const [index, setIndex] = useState(0)
+  
+  const colors = [
+  "from-pink-200 to-pink-100",
+  "from-purple-200 to-purple-100",
+  "from-indigo-200 to-indigo-100",
+  "from-rose-200 to-rose-100",
+  "from-fuchsia-200 to-fuchsia-100",
+]
+
 
   const handleClick = () => {
     if (!opened) {
@@ -49,7 +58,10 @@ export default function MagicMessages({ onNext }) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-pink-700 to-rose-500">
+    
+  <div className="min-h-screen flex items-center justify-center p-6 
+bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
+
 
       <div onClick={handleClick} className="cursor-pointer text-center px-6">
 
@@ -59,19 +71,33 @@ export default function MagicMessages({ onNext }) {
             animate={{ scale: 1 }}
             className="text-8xl"
           >
-            💌
+            <motion.div
+  className="relative w-40 h-28 bg-gradient-to-br from-pink-200 to-purple-200 rounded-lg shadow-2xl mx-auto"
+>
+  {/* Envelope flap */}
+  <div className="absolute top-0 left-0 w-full h-0 border-l-[80px] border-r-[80px] border-b-[60px] border-l-transparent border-r-transparent border-b-pink-300"></div>
+
+  {/* Heart in center */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <Heart className="w-10 h-10 text-red-500 fill-current" />
+  </div>
+</motion.div>
             <p className="text-white mt-4 text-lg">
               Tap to see the magic ✨
             </p>
           </motion.div>
         ) : (
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl text-white max-w-md mx-auto shadow-2xl"
-          >
-            <h2 className="text-2xl font-bold text-yellow-300 mb-4">
+  key={index}
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -50 }}
+  transition={{ duration: 0.4 }}
+  className={`p-8 rounded-3xl max-w-md mx-auto shadow-2xl
+    bg-gradient-to-br ${colors[index % colors.length]}
+    text-gray-800 border border-white/30`}
+>
+            <h2 className="text-2xl font-bold text-purple-700 mb-4">
               {cards[index].header}
             </h2>
 
