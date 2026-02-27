@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from "motion/react"
 import { Mail, Heart, Sparkles, RotateCcw } from "lucide-react"
 import confetti from "canvas-confetti"
 
-import { useEffect } from "react"
-
 export default function Letter({ stopMusic }) {
     const [isOpen, setIsOpen] = useState(false)
     const [showText, setShowText] = useState(false)
@@ -54,15 +52,18 @@ C.S Claina Sherin Maria 🌸`
             return () => clearInterval(timer)
         }
     }, [showText, letterText])
-    
-    useEffect(() => {
+
+useEffect(() => {
     if (containerRef.current) {
-        containerRef.current.scrollTo({
-            top: containerRef.current.scrollHeight,
-            behavior: "smooth",
-        })
+        const scroll = () => {
+            containerRef.current.scrollTo({
+                top: containerRef.current.scrollHeight,
+                behavior: "smooth",
+            })
+        }
+        scroll()
     }
-}, [currentText])
+}, [currentText, showText])
 
     const handleOpenLetter = () => {
         setIsOpen(true)
@@ -167,7 +168,7 @@ C.S Claina Sherin Maria 🌸`
 
                                   <div
     ref={containerRef}
-    className="min-h-72 max-h-72 overflow-y-auto text-gray-700 leading-relaxed"
+    className="min-h-72 max-h-72 overflow-y-auto scroll-smooth text-gray-700 leading-relaxed"
 >
                                     {showText && (
                                         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-3 mr-2 ">
