@@ -26,7 +26,7 @@ export default function Letter() {
   I love you more than words could ever say. Always. 💖♾️
 
 Your loving child, 
-C.S Claina Sherin Maria 🌸
+C.S Claina Sherin Maria 🌸'
 
     useEffect(() => {
         if (showText) {
@@ -126,7 +126,7 @@ C.S Claina Sherin Maria 🌸
                                         animate={{ opacity: [0.5, 1, 0.5] }}
                                         transition={{ duration: 1.5, repeat: Infinity }}
                                     >
-                                        Click to open
+                                        👆Click to open👆
                                     </motion.div>
                                 </div>
                             </motion.div>
@@ -182,7 +182,7 @@ C.S Claina Sherin Maria 🌸
                                             className="inline-flex items-center gap-2 bg-white/60 text-pink-600 font-medium border border-pink-400 px-5 py-2 rounded-full hover:bg-pink-100 transition-all"
                                         >
                                             <RotateCcw className="w-4 h-4" />
-                                            Read Again
+                                            💝Read Again
                                         </button>
                                     </motion.div>
                                 )}
