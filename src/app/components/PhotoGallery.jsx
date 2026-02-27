@@ -3,7 +3,7 @@
 import { motion } from "motion/react"
 import { Camera, ArrowRight } from "lucide-react"
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCube, Pagination } from 'swiper/modules'
+import { EffectCube, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-cube'
 import 'swiper/css/pagination'
@@ -47,22 +47,36 @@ export default function PhotoGallery({ onNext }) {
                 </h1>
                 <p className="text-xl text-purple-300">Beautiful moments with Mummy 📸</p>
             </motion.div>
+            
+           <motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="text-purple-300 text-lg mb-6 font-semibold text-center animate-pulse"
+>
+  👉 Swipe right to see the next memory
+</motion.p>
 
             {/* Cube Gallery */}
             <div className="w-full max-w-sm mx-auto">
-                <Swiper
-                    effect={'cube'}
-                    grabCursor={true}
-                    cubeEffect={{
-                        shadow: true,
-                        slideShadows: true,
-                        shadowOffset: 20,
-                        shadowScale: 0.94,
-                    }}
-                    pagination={true}
-                    modules={[EffectCube, Pagination]}
-                    className="mySwiper h-[350px] md:h-[450px]" // adjust height as needed
-                >
+               <Swiper
+    effect={'cube'}
+    grabCursor={true}
+    loop={true}
+    autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+    }}
+    cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+    }}
+    pagination={true}
+    modules={[EffectCube, Pagination, Autoplay]}
+    className="mySwiper h-[350px] md:h-[450px]"
+>
                     {photos.map((photo, index) => (
                         <SwiperSlide key={photo.id}>
                             <img
