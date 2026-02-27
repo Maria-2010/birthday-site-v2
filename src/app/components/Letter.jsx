@@ -98,7 +98,7 @@ useEffect(() => {
                     <h1 className="text-4xl md:text-6xl py-1 md:py-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 mb-4">
                         A Special Letter
                     </h1>
-                    <p className="text-lg text-purple-300">Just for you Mummy, on your special day 💌</p>
+                    <p className="text-lg text-purple-300">Just for you Ma'am, on your special day 💌</p>
                 </motion.div>
 
                 <motion.div
