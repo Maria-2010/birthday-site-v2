@@ -77,7 +77,7 @@ const stopMusic = () => {
     return (
   <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
-    {/* Floating Hearts (background for all pages) */}
+    {/* Floating Hearts */}
     <FloatingHearts />
 
     {/* Radial Background Effects */}
