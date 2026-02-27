@@ -10,7 +10,6 @@ import MagicMessages from "./components/MagicMessages"
 import PhotoGallery from "./components/PhotoGallery"
 import Letter from "./components/Letter"
 import { motion } from "motion/react"
-import FloatingHearts from "./components/FloatingHearts"
 
 export default function BirthdayApp() {
   const [currentScreen, setCurrentScreen] = useState(0)
@@ -89,9 +88,6 @@ export default function BirthdayApp() {
             "radial-gradient(circle at 50% 50%, rgba(228, 193, 255, 0.4), transparent 40%)",
         }}
       />
-
-      {/* Floating Hearts */}
-      <FloatingHearts />
 
       {/* Music */}
       <audio ref={audioRef} src="/music.mp3" loop />
