@@ -77,15 +77,17 @@ const stopMusic = () => {
     return (
   <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30">
 
-    {/* Floating Hearts */}
-    <FloatingHearts />
-
-    {/* Radial Background Effects */}
+{/* Radial Background Effects */}
     <div className="fixed inset-0 z-0 blur-[120px] opacity-20"
       style={{
         backgroundImage:
           "radial-gradient(circle at 20% 25%, rgba(255, 99, 165, 0.6), transparent 40%)",
       }}
+      
+    {/* Floating Hearts */}
+    <FloatingHearts />
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-10">
+    
     />
 
     <div className="fixed inset-0 z-0 blur-[120px] opacity-20"
