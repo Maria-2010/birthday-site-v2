@@ -64,11 +64,11 @@ export default function MagicMessages({ onNext }) {
 
       <h1 className="text-3xl md:text-5xl font-bold text-transparent 
       bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">
-        Special Messages
+        📜Special Messages📜
       </h1>
 
       <p className="text-lg md:text-xl text-purple-200 mt-2">
-        to you Mummy!
+        for you Mummy!💝
       </p>
 
     </div>
